@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base styles */
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --secondary: #f8fafc;
+  --accent: #6366f1;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
+  --background: #f1f5f9;
+  --card-bg: #ffffff;
+  --border: #e2e8f0;
+  --error: #ef4444;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius: 0.5rem;
+}
+
+/* General styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Main Content */
+main {
+  padding: 1.5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 2rem;
+  }
+}
+
+/* Cards and containers */
+.bg-white, 
+.bg-gray-100 {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bg-white:hover, 
+.shadow:hover {
+  box-shadow: var(--shadow);
+}
+
+/* Statistics Cards */
+.grid-cols-1.md\:grid-cols-3 > div {
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.grid-cols-1.md\:grid-cols-3 > div:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.grid-cols-1.md\:grid-cols-3 > div:nth-child(1) {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+}
+
+.grid-cols-1.md\:grid-cols-3 > div:nth-child(2) {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+}
+
+.grid-cols-1.md\:grid-cols-3 > div:nth-child(3) {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+}
+
+.grid-cols-1.md\:grid-cols-3 h2 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.grid-cols-1.md\:grid-cols-3 p {
+  color: white;
+}
+
+.text-3xl {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Search and Filter */
+.bg-white.p-4 {
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"],
+select {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: var(--secondary);
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Buttons */
+button {
+  transition: transform 0.1s, background-color 0.2s;
+  font-weight: 500;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.bg-blue-600 {
+  background-color: var(--primary);
+}
+
+.hover\:bg-blue-700:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Service Distribution */
+.service-distribution .border {
+  transition: transform 0.2s;
+}
+
+.service-distribution .border:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.bg-blue-100 {
+  background-color: #dbeafe;
+}
+
+.bg-blue-600 {
+  background-color: var(--primary);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+thead {
+  background-color: var(--secondary);
+}
+
+th {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 0.75rem 1rem;
+}
+
+td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-top: 1px solid var(--border);
+}
+
+tbody tr {
+  transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+  background-color: rgb(248, 250, 252);
+}
+
+/* Modal */
+.fixed.inset-0 {
+  backdrop-filter: blur(5px);
+  z-index: 50;
+}
+
+.bg-white.rounded.shadow.max-w-lg {
+  border-radius: var(--radius);
+  overflow: hidden;
+  animation: modal-in 0.3s ease-out forwards;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.p-4.border-b {
+  border-bottom: 1px solid var(--border);
+}
+
+.p-4.border-t {
+  border-top: 1px solid var(--border);
+}
+
+/* Loading and Error States */
+.p-8.text-center {
+  padding: 3rem 1rem;
+}
+
+.text-red-600 {
+  color: var(--error);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+  
+  td, th {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  td:nth-child(4), 
+  th:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    gap: 1rem;
+  }
+  
+  .flex-col.md\:flex-row {
+    gap: 1rem;
+  }
+  
+  button {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Service Distribution Cards */
+.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 > div {
+  border-color: var(--border);
+  border-radius: var(--radius);
+  transition: all 0.2s;
+}
+
+.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 > div:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+/* Animations */
+.p-4.rounded.shadow,
+.bg-white.rounded.shadow.overflow-hidden,
+.bg-white.rounded.shadow.p-4 {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Make service distribution bars more attractive */
+.bg-blue-100.h-4.rounded-full {
+  height: 8px;
+  background-color: #e0e7ff;
+  overflow: hidden;
+}
+
+.bg-blue-600.h-4.rounded-full {
+  height: 8px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width 0.5s ease-out;
+}
