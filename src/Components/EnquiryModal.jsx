@@ -27,7 +27,7 @@ const EnquiryModal = ({ enquiry, onClose }) => {
             <p className="text-lg">{enquiry.name}</p>
           </div>
           <div className="mb-4">
-            <h3 className="text-sm font-medium text-gray-500">Email</h3>
+            <h3 className="text-sm font-medium text-gray-500">Phone Number</h3>
             <p className="text-lg">{enquiry.email}</p>
           </div>
           <div className="mb-4">

@@ -52,7 +52,7 @@ const EnquiryTable = ({ enquiries, loading, error, onRetry, onViewDetails, onDel
           <thead className="bg-gray-100">
             <tr>
               <th className="px-4 py-2 text-left">Name</th>
-              <th className="px-4 py-2 text-left">Email</th>
+              <th className="px-4 py-2 text-left">Phone Number</th>
               <th className="px-4 py-2 text-left">Service</th>
               <th className="px-4 py-2 text-left">Actions</th>
             </tr>
